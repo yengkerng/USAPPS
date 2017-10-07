@@ -3,10 +3,9 @@ import { Route, Switch } from 'react-router-dom';
 import NavigationDrawer from 'react-md/lib/NavigationDrawers';
 import NavLink from './NavLink';
 
-import Home from './Home';
-import Page1 from './Page1';
-import Page2 from './Page2';
-import Page3 from './Page3';
+import Home from './Components/Home';
+import History from './Components/history';
+import Workshop2017 from './Components/2017';
 
 const navItems = [{
   exact: true,
@@ -14,17 +13,13 @@ const navItems = [{
   to: '/',
   icon: 'home',
 }, {
-  label: 'Page 1',
-  to: '/page-1',
-  icon: 'bookmark',
-}, {
-  label: 'Page 2',
-  to: '/page-2',
+  label: 'History',
+  to: '/history',
   icon: 'donut_large',
 }, {
-  label: 'Page 3',
-  to: '/page-3',
-  icon: 'flight_land',
+  label: 'Workshop 2017',
+  to: '/2017',
+  icon: 'bookmark',
 }];
 
 class App extends Component {
@@ -33,15 +28,14 @@ class App extends Component {
       <Route
         render={({ location }) => (
           <NavigationDrawer
-          drawerTitle="USAPPS Options"
-          toolbarTitle="Welcome to USAPPS"
+          drawerTitle="USAPPS"
+          toolbarTitle="Welcome to USAPPS!"
             navItems={navItems.map(props => <NavLink {...props} key={props.to} />)}
           >
             <Switch key={location.key}>
               <Route exact path="/" location={location} component={Home} />
-              <Route path="/page-1" location={location} component={Page1} />
-              <Route path="/page-2" location={location} component={Page2} />
-              <Route path="/page-3" location={location} component={Page3} />
+              <Route path="/history" location={location} component={History} />
+              <Route path="/2017" location={location} component={Workshop2017} />
             </Switch>
           </NavigationDrawer>
         )}
