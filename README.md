@@ -1,6 +1,4 @@
-#USAPPS website
-*** Click on clone at the top right button (should be green), and copy that link
-You should go on your terminal and type git clone {link}, that should give you your repo
+# USAPPS web application
 
 Instructions to install as follows:
 1) Open terminal on MAC
